@@ -1,22 +1,27 @@
 def squared_sum(a, b)
-  # Q1 CODE HERE
-
+  return (a + b) ** 2
 end
 
 def sort_array_plus_one(a)
   # Q2 CODE HERE
-
+  return a.sort.map{|e| e + 1}
 end
 
 def combine_name(first_name, last_name)
   # Q3 CODE HERE
-
+  return "#{first_name} #{last_name}"
 end
 
 def blockin_time(a)
   # DO NOT EDIT THIS CODE BELOW
   require './foobar'
   Foobar.baz a
+  total = 0
+  a = a.map {|s| s.to_i}.map{|num| num + 2}.select{|num| num.even?}.uniq.select{|num| num < 10}
+  a = a.each do |elem|
+    total += elem
+  end
+  return total
 end
 
 def scrabble(word)
@@ -49,4 +54,11 @@ def scrabble(word)
     z: 10,
   }
   # Q5 CODE HERE
+  total = 0
+  chars = word.split('')
+  chars = chars.map{|c| c.to_sym}.map{|s| values[s]}
+  chars = chars.each do |elem|
+    total += elem
+  end
+  return total
 end
